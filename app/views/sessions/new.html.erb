@@ -1,13 +1,21 @@
 <div class="start">
-<h1> Login <h1>
+    
+    <div class="container-start">    
+        <h1> Login <h1>
 
 
 
+        <%= form_for :user do |f| %>
 
+            <%= f.email_field :email, placeholder: "Email", required:true, class: "container-input"%>
+            <%= f.password_field :password, placeholder: "Password", required: true, class: "container-input"%>
 
+            <%= submit_tag "Login", class: "submitbutton" %>
 
+        <% end %>
 
-
-
+        <h4><%= link_to "Login with Google", "/auth/google_oauth2" %></h4>
+        <h4><%= link_to "Create an Account", signup_path %></h4>
+    </div>
 
 </div>

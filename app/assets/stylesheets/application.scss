@@ -42,3 +42,64 @@ body, html {
     background-size: cover;
     font-family: "Checkbook-1K2", 'Orbitron', sans-serif;
  }
+
+.start form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-start {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    max-width: 400px;
+    padding: 35px;
+    text-decoration: none;
+}
+
+.container-input {
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: #fff;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.submitbutton {
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: #fff;
+    border-radius: 10px;
+    font-size: 1.5rem;
+
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.submitbutton:hover{
+    background: #650a7c;
+    color: #fff;
+    transform: scale(.99);
+}
+
+.start h1 {
+    text-align: center;
+}
+
+.start h4 {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+}
