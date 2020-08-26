@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  root to: "sessions#new"
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+
+  get '/auth/google_oauth2/callback', to: 'sessions#create_omniauth'
   
-  
+  get '/signup', to: 'users#new'
+
+  delete '/logout', to: 'sessions#destroy'
   
   resources :reviews
   resources :karts

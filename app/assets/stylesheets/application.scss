@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+body, html {
+    height: 100%;
+    background: rgb(101,10,124);
+    background: radial-gradient(circle, #650a7c 7%, #230338 58%);
+    color: #fff;
+
+}
+
+//  LOGIN, SIGNUP, & HELP PAGES
+ .start {
+    background: url(StartBackground.png) #230338;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
