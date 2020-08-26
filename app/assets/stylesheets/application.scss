@@ -22,18 +22,225 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 // Font Variables
 $font-family: 'Orbitron', sans-serif;
-$primary-color: #fff;
+$primary-color: #ECE7EE;
+
+// Colors
+:root {
+    --yellow-color: #fcee09; 
+    --red-color: #ff003c;
+    --black-color: #230338;
+    --purple-color: #650a7c;
+    --ltpurple-color: #9548A5;
+    --white-color: #ECE7EE;
+  }
 
 // Styles
 body, html {
     height: 100%;
-    background: rgb(101,10,124);
-    background: radial-gradient(circle, #650a7c 7%, #230338 58%);
+    background: var(--purple-color);
+    background: radial-gradient(circle, var(--purple-color), var(--black-color) 58%);
     font-family: 'Orbitron', sans-serif;
-    color: #fff;
+    color: var(--white-color);
 }
 
-//  LOGIN, SIGNUP, & HELP PAGES
+h1 {
+    text-align: center;
+    margin: auto;
+    padding: 14px 20px;
+    color: var(--white-color);
+    font-size: 2.5rem;
+    font-family: "Checkbook-1K2", 'Orbitron', sans-serif;;
+    text-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
+}
+
+// BUTTONS
+.linkbtn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--black-color);
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--yellow-color);
+    color: var(--black-color);
+    cursor: pointer;
+    padding: 20px 25px;
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
+}
+
+
+.linkbtn__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: var(--yellow-color);
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    z-index: 2;
+}
+.linkbtn__glitch {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--yellow-color);
+    
+}
+@keyframes glitch-animation {
+    0% {
+      opacity: 1;
+      transform: translateZ(0);
+      clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    }
+  
+    2% {
+      clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+      transform: translate(-5px);
+    }
+  
+    6% {
+      clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+      transform: translate(5px);
+    }
+  
+    8% {
+      clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+      transform: translate(-5px);
+    }
+  
+    9% {
+      clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+      transform: translate(0);
+    }
+  
+    10% {
+      clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+      transform: translate3d(5px, 0, 0);
+    }
+  
+    13% {
+      clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+      transform: translateZ(0);
+    }
+  
+    13.1% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      transform: translate3d(5px, 0, 0);
+    }
+  
+    15% {
+      clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+      transform: translate3d(5px, 0, 0);
+    }
+  
+    20% {
+      clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+      transform: translate3d(-5px, 0, 0);
+    }
+  
+    20.1% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      transform: translate3d(5px, 0, 0);
+    }
+  
+    25% {
+      clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+      transform: translate3d(5px, 0, 0);
+    }
+  
+    30% {
+      clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+      transform: translate3d(-5px, 0, 0);
+    }
+  
+    30.1% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+  
+    35% {
+      clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+      transform: translate(-5px);
+    }
+  
+    40% {
+      clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+      transform: translate(5px);
+    }
+  
+    45% {
+      clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+      transform: translate(-5px);
+    }
+  
+    50% {
+      clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+      transform: translate(0);
+    }
+  
+    55% {
+      clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+      transform: translate3d(5px, 0, 0);
+    }
+  
+    60% {
+      clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  
+    60.1% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      opacity: 1;
+    }
+    to {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      opacity: 1;
+    }
+}
+.linkbtn:hover .linkbtn__glitch,
+.linkbtn:hover .linkbtn__content::after,
+.linkbtn:focus .linkbtn__glitch,
+.linkbtn:focus .linkbtn__content::after {
+    display: block;
+    animation: glitch-animation 1s linear 0s infinite;
+}
+
+.submitbutton {
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: var(--purple-color);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.submitbutton:hover{
+    background: var(--ltpurple-color);
+    color: var(--yellow-color);
+    transform: scale(.99);
+    text-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
+}
+
+//  LOGIN & SIGNUP
 .start {
     background: url(StartBackground.png) #230338;
     height: 100%;
@@ -43,12 +250,6 @@ body, html {
     font-family: "Checkbook-1K2", 'Orbitron', sans-serif;
  }
 
-.start form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .container-start {
     width: 100%;
     display: flex;
@@ -56,8 +257,7 @@ body, html {
     align-items: center;
     flex-direction: column;
     margin: 0;
-    max-width: 400px;
-    padding: 35px;
+    max-width: auto;
     text-decoration: none;
 }
 
@@ -68,38 +268,34 @@ body, html {
     margin-bottom: 10px;
     width: 100%;
     padding: 14px 20px;
-    background: #fff;
-    border-radius: 10px;
+    background: var(--white-color);
+    border-radius: 5px;
     font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    animation: blinker 1.8s linear infinite;
 }
 
-.submitbutton {
-    text-decoration: none;
+@keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.25; }
+    100% { opacity: 1.0; }
+}
+
+// FORMS
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    padding: 14px 20px;
-    background: #fff;
-    border-radius: 10px;
-    font-size: 1.5rem;
-
-    cursor: pointer;
-    transition: all .25s ease;
-}
-
-.submitbutton:hover{
-    background: #650a7c;
-    color: #fff;
-    transform: scale(.99);
-}
-
-.start h1 {
-    text-align: center;
-}
-
-.start h4 {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #fff;
+    border: 2px solid var(--black-color);
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--yellow-color);
+    color: var(--black-color);
+    padding: 20px 25px;
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: .85rem;
+    text-transform: uppercase;
+    box-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
 }
