@@ -1,0 +1,23 @@
+<div class="start">
+    
+    <div class="container-start">    
+        <br><br><br>
+        <h1> Pixel Kart Cyber Edition<h1>
+            
+        <%= form_for :user do |f| %>
+            
+            <%= f.text_field :username, placeholder: "Username_", required: true, class: "container-input" %>
+            <%= f.email_field :email, placeholder: "Email_", required:true, class: "container-input" %>
+            <%= f.password_field :password, placeholder: "Password_", required: true, class: "container-input" %>
+            
+            <%= submit_tag "Create Account", class: "submitbutton" %>
+        <% end %>
+        
+        <br>
+        <button class="linkbtn">
+            <%= link_to "Back to Login", login_path %>
+            <span class="linkbtn__glitch"></span>
+        </button>
+    </div>
+
+</div>
