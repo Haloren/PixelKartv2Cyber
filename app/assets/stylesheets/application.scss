@@ -20,11 +20,12 @@
 } 
 // Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 // Font Variables
 $checkbook: "Checkbook";
 $primary-color: #ECE7EE;
 
-// Colors
+// COLORS
 :root {
     --yellow-color: #fcee09; 
     --red-color: #ff003c;
@@ -34,7 +35,7 @@ $primary-color: #ECE7EE;
     --white-color: #ECE7EE;
   }
 
-// Styles
+// STYLES
 body, html {
     height: 100%;
     background: var(--purple-color);
@@ -51,6 +52,14 @@ h1 {
     font-size: 2.5rem;
     font-family: $checkbook, 'Orbitron', sans-serif;
     text-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
+}
+
+// ERRORS
+.flashmessage {
+  font-size: 1.5rem;
+  color: var(--red-color);
+  font-family: 'Orbitron', sans-serif;
+  animation: blinker 1s linear infinite;
 }
 
 // BUTTONS
@@ -75,7 +84,6 @@ h1 {
       text-decoration: none;
     }
 }
-
 
 .linkbtn__content {
     display: flex;
