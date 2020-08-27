@@ -10,15 +10,21 @@
   </head>
 
   <body>
-
-    <%= link_to "Log Out", logout_path, method: "delete" %>
-
+    
+    <header>
+      <% if logged_in? %>
+        <nav>
+          <ul>
+            <li><%= link_to "Home", user_path(@user) %></li>
+            <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
+          </ul>
+        </nav>
+      <% end %>
+    </header>
 
     <%= yield %>
 
+    <hr>
 
-
-
-    
   </body>
 </html>
