@@ -16,8 +16,14 @@ class SessionsController < ApplicationController
     def create
         # byebug
         user = User.find_by(email: params[:user][:email])
-        redirect_to user_path(user)
 
+        if user.try(:authenticate, params[:user][:password])
+            session[:user_id] = user.id
+            redirect_to user_path(user)
+        else
+            flash[:message] = "Incorrect Email and/or Password"
+            redirect_to login_path
+        end
     end
     
     def destroy

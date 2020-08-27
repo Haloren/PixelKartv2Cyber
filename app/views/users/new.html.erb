@@ -4,6 +4,10 @@
         <br><br><br>
         <h1> Pixel Kart Cyber Edition<h1>
             
+        <div class="flashmessage">
+            <%= flash[:message] %>
+        </div>
+
         <%= form_for :user do |f| %>
             
             <%= f.text_field :username, placeholder: "Username_", required: true, class: "container-input" %>
