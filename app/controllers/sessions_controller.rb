@@ -1,11 +1,16 @@
 class SessionsController < ApplicationController
 
     def index
-        redirect_to login_path
+        @user = current_user
+        if logged_in?
+            redirect_to user_path(@user.id)
+        else 
+            redirect_to login_path
+        end
     end
 
     def new
-        
+
     end
 
     def create
