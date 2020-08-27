@@ -14,6 +14,9 @@ class SessionsController < ApplicationController
     end
 
     def create
+        # byebug
+        user = User.find_by(email: params[:user][:email])
+        redirect_to user_path(user)
 
     end
     
