@@ -5,4 +5,7 @@ class User < ApplicationRecord
     has_many :reviewed_karts, through: :reviews, source: :kart
 
     has_many :karts
+
+    validates :username, presence: true
+    validates :email, presence: true, uniqueness: true
 end
