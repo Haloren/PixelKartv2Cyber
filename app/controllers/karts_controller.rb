@@ -1,5 +1,5 @@
 class KartsController < ApplicationController
-    before_action :set_user, only: [:new, :index]
+    before_action :set_user, only: [:new, :index, :show]
 
     def new
     end
@@ -8,6 +8,11 @@ class KartsController < ApplicationController
     end
 
     def index 
+    end
+
+    def show
+        # byebug
+        @kart = Kart.find_by(id: params[:id])
     end
 
 end

@@ -9,6 +9,6 @@
 
 <ul>
     <% @user.karts.each do |kart| %>
-        <li> <%= kart.name %> </li>
+        <li> <%= link_to kart.name, kart_path(kart.id) %> </li>
     <% end %>
 </ul>
