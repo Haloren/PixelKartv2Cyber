@@ -1,1 +1,14 @@
-<h1> Welcome <%= @user.username%> to Your Garage </h1>
+<br><br><br>
+<h1> <%= @user.username.capitalize %>'s Garage </h1>
+
+<% if @user.karts == [] %>
+    <h2> Your Garage is empty! </h2>
+    <%= link_to "Build your first Kart"%>
+<% end %>
+
+
+<ul>
+    <% @user.karts.each do |kart| %>
+        <li> <%= kart.name %> </li>
+    <% end %>
+</ul>

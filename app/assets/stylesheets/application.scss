@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
- */
+ */  
 //Custom Font
 @font-face {
     font-family: "Checkbook";
@@ -46,7 +46,6 @@ body, html {
 
 h1 {
     text-align: center;
-    top: 0;
     padding: 14px 20px;
     color: var(--white-color);
     font-size: 2.5rem;
@@ -61,26 +60,60 @@ nav {
   display: flex;
   justify-content: center;
   font-family: 'Orbitron', sans-serif;
-  animation: blinker 4s linear infinite;
+  // animation: blinker 6s linear infinite;
+  
   ul {
     text-align: center;
     list-style-type: none;
     list-style-type: none;
-    margin: 0;
-    padding: 15px;
+    margin: 5px;
+    padding: 0px;
     li {
       display: inline;    
       a {
         color: var(--yellow-color);
         text-decoration: none;
         text-transform: uppercase;
-        padding: 14px;
+        padding: 10px 40px;
+        font-size: 1.5em;
+        background: linear-gradient(to right, var(--red-color), var(--ltpurple-color), var(--yellow-color) 75%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         &:hover {
-          background-color: var(--ltpurple-color);
+          background-position: 0 100%;
+          background-color: var(--white-color);
+          animation: blinker 1s linear infinite;
         }
       }
     }
   }
+}
+
+.help {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  a {
+    text-decoration: none;
+    color: var(--yellow-color);
+    text-shadow:1px 1px 10px var(--white-color);
+    background: linear-gradient(to right, var(--red-color), var(--ltpurple-color), var(--yellow-color) 75%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &:hover {
+    animation: blinker 1s linear infinite;
+  }
+}
+
+.copyright {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: var(--yellow-color);
+  text-shadow:1px 1px 10px var(--white-color);
 }
 
 // ERRORS
@@ -283,7 +316,11 @@ nav {
 //  LOGIN & SIGNUP
 .start {
     background: url(StartBackground.png) #230338;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

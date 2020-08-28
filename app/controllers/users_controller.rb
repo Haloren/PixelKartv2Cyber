@@ -22,6 +22,10 @@ class UsersController < ApplicationController
         redirect_to root_path if !@user
     end
 
+    def help
+        @user = current_user
+    end
+
     private
 
     def user_params
