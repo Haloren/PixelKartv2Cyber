@@ -315,7 +315,7 @@ nav {
 
 //  LOGIN & SIGNUP
 .start {
-    background: url(StartBackground.png) #230338;
+    background: url(StartBackground.png) var(--black-color);
     position: fixed;
     top: 0;
     left: 0;
@@ -356,6 +356,34 @@ nav {
     0% { opacity: 1.0; }
     50% { opacity: 0.25; }
     100% { opacity: 1.0; }
+}
+
+// GARAGE
+.garage {
+    background: url(CyberGarage.png) var(--black-color);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    min-height: 100%;
+    min-width: 100%;
+    font-family: "Checkbook-1K2", 'Orbitron', sans-serif;
+    li {
+      display: grid;
+      list-style: none;
+      padding: 2%;
+    }
+      a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: var(--purple-color);
+      background-color: var(--white-color);
+      font-family: $checkbook, 'Orbitron', sans-serif;
+      text-shadow:1px 1px 10px var(--ltpurple-color), 1px 1px 10px var(--yellow-color);
+      box-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
+    }
+      a:hover {
+      animation: blinker 1s linear infinite;
+    }
 }
 
 // FORMS

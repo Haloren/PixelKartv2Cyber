@@ -1,14 +1,16 @@
 <br><br><br>
-<h1> <%= @user.username %>'s Garage </h1>
+<div class="garage">
+    <h1> <%= @user.username %>'s Garage </h1>
 
-<% if @user.karts == [] %>
-    <h2> Your Garage is empty! </h2>
-    <%= link_to "Build your first Kart"%>
-<% end %>
-
-
-<ul>
-    <% @user.karts.each do |kart| %>
-        <li> <%= link_to kart.name, kart_path(kart.id) %> </li>
+    <% if @user.karts == [] %>
+        <h2> Your Garage is empty! </h2>
+        <%= link_to "Build your first Kart"%>
     <% end %>
-</ul>
+
+
+    <ul>
+        <% @user.karts.each do |kart| %>
+            <li> <%= link_to kart.name, kart_path(kart.id) %> </li>
+        <% end %>
+    </ul>
+</div>
