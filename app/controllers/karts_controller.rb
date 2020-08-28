@@ -1,15 +1,13 @@
 class KartsController < ApplicationController
+    before_action :set_user, only: [:new, :index]
 
     def new
-        @user = current_user
     end
 
     def create
-
     end
 
-    def index
-        @user = current_user
+    def index 
     end
 
 end

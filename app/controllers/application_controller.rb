@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-helper_method :current_user, :logged_in?
+helper_method :current_user, :logged_in?, :set_user
 
 private
 
@@ -9,6 +9,10 @@ private
 
     def logged_in?
         !!current_user
+    end
+
+    def set_user
+        @user = current_user
     end
 
 end
