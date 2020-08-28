@@ -361,7 +361,6 @@ nav {
 // GARAGE
 .garage {
     background: url(CyberGarage.png) var(--black-color);
-    background-position: fixed;
     background-repeat: no-repeat;
     background-size: 100% 80%;
     min-height: 100%;
@@ -370,7 +369,10 @@ nav {
     li {
       display: grid;
       list-style: none;
-      padding: 2%;
+      padding: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      grid-auto-rows: auto;
     }
       a {
       font-size: 1.5rem;
