@@ -15,4 +15,9 @@ class KartsController < ApplicationController
         @kart = Kart.find_by(id: params[:id])
     end
 
+    private 
+
+        def kart_params
+            parmas.require(:kart).permit(:name, :driver, :body, :wheels, :garage_id, :garage_attributes: [:name])
+        end
 end

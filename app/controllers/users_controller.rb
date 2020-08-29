@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+    before_action :set_user, only: [:help]
+    
     def new
         @user = User.new
     end
@@ -23,7 +24,6 @@ class UsersController < ApplicationController
     end
 
     def help
-        @user = current_user
     end
 
     private
