@@ -52,19 +52,26 @@ h1 {
     font-family: $checkbook, 'Orbitron', sans-serif;
     text-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
 }
+
+h3 {
+  color: var(--yellow-color);
+}
+
 // NAV BAR
 nav {
   position: fixed;
-  top: 2%;
+  top: 0;
   width: 100%;
+  padding-top: 15px;
   display: flex;
+  overflow: hidden;
+  background-color: var(--black-color);
   justify-content: center;
   font-family: 'Orbitron', sans-serif;
   // animation: blinker 6s linear infinite;
   
   ul {
     text-align: center;
-    list-style-type: none;
     list-style-type: none;
     margin: 5px;
     padding: 0px;
@@ -91,9 +98,30 @@ nav {
 }
 
 .help {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Orbitron', sans-serif;
+  animation: blinker 4s linear infinite;
+  a {
+    padding: 10px 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--white-color);
+    text-shadow:1px 1px 10px var(--yellow-color);
+  }
+  &:hover {
+    animation: blinker .5s linear infinite;
+  }
+}
+
+.helpbtn {
+  position: fixed;
+  bottom: 30px;
+  right: 5px;
+  padding: 5px;
   a {
     text-decoration: none;
     color: var(--yellow-color);
@@ -109,7 +137,7 @@ nav {
 }
 
 .copyright {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 10px;
   color: var(--yellow-color);
@@ -360,6 +388,7 @@ nav {
 
 // GARAGE
 .garage {
+    top: 0;
     background: url(CyberGarage.png) var(--black-color);
     background-repeat: no-repeat;
     background-size: 100% 80%;

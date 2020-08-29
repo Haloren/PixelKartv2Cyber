@@ -18,6 +18,6 @@ class KartsController < ApplicationController
     private 
 
         def kart_params
-            parmas.require(:kart).permit(:name, :driver, :body, :wheels, :garage_id, :garage_attributes: [:name])
+            parmas.require(:kart).permit(:name, :driver, :body, :wheels, :garage_id, :garage_attributes [:name])
         end
 end
