@@ -1,5 +1,5 @@
 class KartsController < ApplicationController
-    before_action :set_user, only: [:new, :index, :show]
+    before_action :set_user, only: [:new, :index, :show, :destroy_kart]
 
     def new
     end
@@ -13,6 +13,13 @@ class KartsController < ApplicationController
     def show
         # byebug
         @kart = Kart.find_by(id: params[:id])
+    end
+
+    def destroy_kart
+        @kart = Kart.find_by(id: params[:id])
+        # @kart.destroy
+        flash[:message] = " #{@kart.name} DELETED "
+        redirect_to @user_path
     end
 
     private 
