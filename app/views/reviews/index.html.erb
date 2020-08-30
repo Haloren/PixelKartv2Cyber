@@ -1,1 +1,17 @@
 <br><br><br>
+<h1> Kart Reviews </h1>
+
+<ul>
+    <% @karts.each do |kart|%>
+        <li>
+        <%= link_to kart.name, kart_path(kart.id) %>
+        
+        
+        <% kart.reviews.each do |review| %>
+            <%= review.rating %>
+        <% end %>
+        
+        
+        </li>
+    <% end %>
+</ul>
