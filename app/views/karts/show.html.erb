@@ -1,21 +1,22 @@
 <br><br><br>
 <h1><%= @kart.name %></h1>
+<div class="kart">
 
-<%# center under name %>
-<h3 class="Stars" style="--rating: 3.4;" aria-label="Avg Kart rating: 3.4." ></h3> 
+    <div class="Stars" style="--rating: 3.4;" aria-label="Avg Kart rating: 3.4." ></div> 
+    <h3> <%= @kart.club.name %> </h3>
 
-<h3> <%= @kart.club.name %> </h3>
+    <% if @kart.user.id != @user.id %>
+        <%= link_to "Review this Kart" %>
+    <% end %>
 
-<p> <%= @kart.driver %> | <%= @kart.body %> | <%= @kart.wheels %></p>
+    <p> <%= @kart.driver %> | <%= @kart.body %> | <%= @kart.wheels %></p>
 
-<% if @kart.user.id != @user.id %>
-    <p> <%= link_to "Review this Kart" %> </p>
-<% end %>
-
+</div>
 <div class="reviews">
 <blockquote class="review-content">
     <% if @kart.reviews.count == 0 %>
         <h3> This Kart has no Reviews </h3>
+    
     <% else %>
         <% @kart.reviews.each do |review| %>
             <p><%= review.content %></p>
@@ -25,6 +26,7 @@
     <% end %>
 </blockquote>
 </div>
-
 <br>
+<div class="container-start">
 <div class="flashmessage"><%= link_to "DELETE KART", [@kart], :confirm => 'Send you Kart to the Junkyard', :method => :delete %></div>
+</div>
