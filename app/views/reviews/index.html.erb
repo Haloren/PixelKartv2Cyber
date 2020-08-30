@@ -1,12 +1,17 @@
 <br><br><br>
 <h1> Kart Reviews </h1>
-<h3> Select a Kart to Add a Review </h3>
-
-<% @reviews.sort_by(&:rating).reverse.each do |review|%>
-    <h3><%= link_to review.kart.name, kart_path(review.kart.id) %></h3>
-    <ul>
-        <li><%= review.rating %></li>
-        <li><%= review.content %></li>
-        <li>- <%= review.user.username %></li>
-    </ul>
-<% end %>
+<div class="reviews">
+    <h3> Select a Kart Name to Add a Review </h3>
+    
+    <% @reviews.sort_by(&:rating).reverse.each do |review|%>
+        <blockquote class="review-content">
+            <h3>
+                <%= link_to review.kart.name, kart_path(review.kart.id) %> 
+                <div class="Stars" style="--rating: <%=review.rating%>;" aria-label="Kart rating is <%=review.rating%> out of 4."></div>
+            </h3>
+            <p><%= review.content %></p>
+            <cite><%= review.user.username %></cite>
+        </blockquote>
+    
+    <% end %>
+</div>

@@ -1,5 +1,6 @@
 <br><br><br>
-<h1> <%= @club.name %> Members </h1>
+<h1> <%= @club.name %></h1>
+<h3> Members </h3>
 <% @karts.sort.reverse.each do |kart| %>
     <ul>
         <% if kart.club.id == @club.id %>

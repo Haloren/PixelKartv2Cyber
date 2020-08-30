@@ -1,6 +1,9 @@
 <br><br><br>
 <h1><%= @kart.name %></h1>
 
+<%# center under name %>
+<h3 class="Stars" style="--rating: 3.4;" aria-label="Avg Kart rating: 3.4." ></h3> 
+
 <h3> <%= @kart.club.name %> </h3>
 
 <p> <%= @kart.driver %> | <%= @kart.body %> | <%= @kart.wheels %></p>
@@ -12,12 +15,13 @@
 <% if @kart.reviews.count == 0 %>
     <p> This Kart has no Reviews </p>
 <% else %>
-    <% @kart.reviews.each do |r| %>
-    <ul>    
-        <li><%= r.rating %> - <%= r.content %></li>
+    <% @kart.reviews.each do |review| %>
+    <ul>        
+        <li class="Stars" style="--rating: <%= review.rating %>;" aria-label="Kart rating is <%=review.rating%> out of 4." ></li> 
+        <p><%= review.content %> - <%= review.user.username %></p>
     </ul>
     <% end %>
 <% end %>
 
 <br>
-<h3><%= link_to "DELETE KART" %></h3>
+<h3><%= link_to "DELETE KART", [@kart], :confirm => 'Send you Kart to the Junkyard', :method => :delete %></h3>

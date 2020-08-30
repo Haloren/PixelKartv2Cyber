@@ -17,7 +17,7 @@ class KartsController < ApplicationController
 
     def destroy_kart
         @kart = Kart.find_by(id: params[:id])
-        # @kart.destroy
+        @kart.destroy
         flash[:message] = " #{@kart.name} DELETED "
         redirect_to @user_path
     end

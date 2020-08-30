@@ -33,6 +33,9 @@ $primary-color: #ECE7EE;
     --purple-color: #650a7c;
     --ltpurple-color: #9548A5;
     --white-color: #ECE7EE;
+
+    --star-size: 34px;
+    --star-background: var(--yellow-color);
   }
 
 // STYLES
@@ -382,7 +385,7 @@ nav {
 
 @keyframes blinker {
     0% { opacity: 1.0; }
-    50% { opacity: 0.25; }
+    50% { opacity: 0.40; }
     100% { opacity: 1.0; }
 }
 
@@ -434,4 +437,86 @@ form {
     font-size: .85rem;
     text-transform: uppercase;
     box-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
+}
+
+// STARS
+
+.Stars {
+  --percent: calc(var(--rating) / 4 * 100%);
+  
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: Times; // make sure ★ appears correctly
+  line-height: 1;
+  
+  &::before {
+    content: '★★★★';
+    text-shadow:1px 1px 10px var(--yellow-color), 1px 1px 10px var(--red-color);
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), transparent var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+// REVIEWS
+.reviews {
+  h3 {
+    text-align: center;
+    animation: blinker 3s ease-out infinite;
+  }
+}
+.review-content {
+  padding: 8px 0px 5px 75px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 10px var(--yellow-color), 1px 1px 10px var(--white-color);
+  position: relative;
+  margin: auto;
+  max-width: 750px;
+  min-height: 100px;
+  a {
+    color: var(--white-color);
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow:1px 1px 10px var(--red-color), 1px 1px 10px var(--yellow-color);
+  }
+  a:hover {
+    cursor: pointer;
+    animation: blinker 1s linear infinite;
+  }
+  p {
+    font-size: 1.2rem;
+    overflow: auto;
+  }
+  cite {
+    font-size: .8rem;
+    opacity: 75%;
+  }
+  &:before {
+    font-family: 'Orbitron', sans-serif;
+    content: "“";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 5rem;
+    color: var(--ltpurple-color);
+    opacity: 75%;
+    font-weight: normal;
+  }
+  &:after {
+    font-family: 'Orbitron', sans-serif;
+    content: "”";
+    position: absolute;
+    bottom: -90px;
+    line-height: 100px;
+    right: -32px;
+    font-size: 20rem;
+    color: var(--ltpurple-color);
+    opacity: 50%;
+    font-weight: normal;
+  }
+  div {
+    padding: 0px 0px 0px 20px;
+  }
 }
