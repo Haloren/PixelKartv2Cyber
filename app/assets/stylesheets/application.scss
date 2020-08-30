@@ -514,6 +514,7 @@ form {
     color: var(--ltpurple-color);
     opacity: 75%;
     font-weight: normal;
+    text-shadow:1px 1px 5px var(--yellow-color), 1px 1px 5px var(--white-color);
   }
   &:after {
     font-family: 'Orbitron', sans-serif;
@@ -526,6 +527,7 @@ form {
     color: var(--ltpurple-color);
     opacity: 50%;
     font-weight: normal;
+    text-shadow:1px 1px 10px var(--yellow-color), 1px 1px 10px var(--white-color);
   }
   div {
     padding: 0px 0px 0px 20px;
