@@ -3,12 +3,6 @@ class ClubsController < ApplicationController
 
     def index
         @clubs = Club.all
-        byebug
-        if @clubuser = User.find_by(id: params[:user_id])
-            @clubs = @clubuser.clubs
-        else 
-            "You currently are not a member of any clubs."
-        end
     end
 
     def show
