@@ -10,4 +10,8 @@ class Kart < ApplicationRecord
   validates :body, presence: true
   validates :wheels, presence: true
 
+  def average_rating
+      self.reviews.average(:rating)
+  end
+
 end

@@ -12,6 +12,19 @@
             <p><%= review.content %></p>
             <cite><%= review.user.username %></cite>
         </blockquote>
-    
     <% end %>
+
+    <% @karts.each do |kart| %>
+    
+        <% if kart.reviews.count == 0 %>
+        <blockquote class="review-content">
+            <h3> 
+            <%= link_to kart.name, kart_path(kart.id) %>
+            <div class="Stars" style="--rating: ★★★★;"></div>
+            </h3>
+            <h4><%= "This Kart has no Reviews"%></h4>
+        </blockquote>
+        <% end %>
+    <% end %>
+    
 </div>

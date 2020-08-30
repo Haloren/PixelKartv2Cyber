@@ -13,6 +13,7 @@ class KartsController < ApplicationController
     def show
         # byebug
         @kart = Kart.find_by(id: params[:id])
+        @ratings = @kart.reviews
     end
 
     def destroy_kart
