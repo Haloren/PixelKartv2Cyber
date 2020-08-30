@@ -3,7 +3,7 @@
 <ul>
     <% @clubs.each do |club| %>
     <li> 
-        <%= club.name %>
+        <%= link_to club.name, club_path(club.id) %>
     </li>
     <% end %>
 </ul>

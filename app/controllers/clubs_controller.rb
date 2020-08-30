@@ -7,6 +7,6 @@ class ClubsController < ApplicationController
 
     def show
         @club = Club.find_by(id: params[:id])
+        @karts = Kart.all
     end
-
 end
