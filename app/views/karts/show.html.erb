@@ -12,16 +12,19 @@
     <p> <%= link_to "Review this Kart" %> </p>
 <% end %>
 
-<% if @kart.reviews.count == 0 %>
-    <p> This Kart has no Reviews </p>
-<% else %>
-    <% @kart.reviews.each do |review| %>
-    <ul>        
-        <li class="Stars" style="--rating: <%= review.rating %>;" aria-label="Kart rating is <%=review.rating%> out of 4." ></li> 
-        <p><%= review.content %> - <%= review.user.username %></p>
-    </ul>
+<div class="reviews">
+<blockquote class="review-content">
+    <% if @kart.reviews.count == 0 %>
+        <h3> This Kart has no Reviews </h3>
+    <% else %>
+        <% @kart.reviews.each do |review| %>
+            <p><%= review.content %></p>
+            <div class="Stars" style="--rating: <%= review.rating %>;" aria-label="Kart rating is <%=review.rating%> out of 4." ></div> 
+            <cite><%= review.user.username %></cite>
+        <% end %>
     <% end %>
-<% end %>
+</blockquote>
+</div>
 
 <br>
-<h3><%= link_to "DELETE KART", [@kart], :confirm => 'Send you Kart to the Junkyard', :method => :delete %></h3>
+<div class="flashmessage"><%= link_to "DELETE KART", [@kart], :confirm => 'Send you Kart to the Junkyard', :method => :delete %></div>
