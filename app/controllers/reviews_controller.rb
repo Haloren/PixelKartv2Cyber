@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
     before_action :set_user, only: [:index, :new, :create]
-    
+    before_action :authenticate
+
     def new
         @kart = Kart.find_by(id: params[:kart_id])
         #byebug

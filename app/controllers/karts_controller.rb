@@ -1,5 +1,6 @@
 class KartsController < ApplicationController
     before_action :set_user, only: [:index, :show, :new, :create, :destroy]
+    before_action :authenticate
 
     def new
         @kart = Kart.new

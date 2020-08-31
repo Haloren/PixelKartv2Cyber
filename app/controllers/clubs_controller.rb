@@ -1,5 +1,6 @@
 class ClubsController < ApplicationController
     before_action :set_user, only: [:index, :show]
+    before_action :authenticate
 
     def index
         @clubs = Club.all
