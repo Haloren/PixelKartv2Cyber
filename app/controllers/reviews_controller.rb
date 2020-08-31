@@ -3,15 +3,15 @@ class ReviewsController < ApplicationController
     
     def new
         @kart = Kart.find_by(id: params[:kart_id])
-        # byebug
-        @review = @kart.reviews.build 
+        #byebug
+        @review = @kart.reviews.build #review belongs_to a kart
     end
 
     def create
         @review = Review.new(review_params)
         @review.user_id = session[:user_id]
         if @review.save
-            redirect_to review_path
+            redirect_to reviews_path
         else
             flash[:message] = @user.errors.full_messages
             render :new
@@ -21,6 +21,12 @@ class ReviewsController < ApplicationController
     def index
         @reviews = Review.all
         @karts = Kart.all
+
+        if @kart = Kart.find_by(id: params[:kart_id])
+            @reviews = @kart.reviews
+        else
+            @reviews = Review.all 
+        end
     end
 
     private

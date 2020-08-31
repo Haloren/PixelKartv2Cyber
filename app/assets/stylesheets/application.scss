@@ -455,24 +455,28 @@ nav {
 
 // CLUBS & MEMBERS
 .clubs {
+    display: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
-    grid-column-gap: 12px;
+    grid-auto-rows: 150px;
+    grid-gap: 30px;
+    grid-column-gap: 30px;
   }
   li {
     list-style: none; 
   }
   a {
-    padding: 10% 20% 10% 20%;
+    padding: 10% 20%;
     border-radius: 4px;
     background: var(--black-color);
     text-shadow:1px 1px 10px var(--red-color), 1px 1px 10px var(--yellow-color);
     box-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
     color: var(--white-color);
-    overflow: auto;
-    font-size: 1.8rem;
+    font-size: 1rem;
     text-decoration: none;
   }
   a:hover {
@@ -528,8 +532,8 @@ form {
     width: 50%;
     background-color: var(--white-color);
   }
-  input {
-    width: 75%;
+  input, textarea {
+    width: 100%;
     margin: 1%;
     padding: 3%;
     border: 2px solid var(--black-color);
@@ -541,11 +545,20 @@ form {
     font-size: 1rem;
     box-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
   }
+  input[type=submit] {
+  width: 100%;
+  text-align: center;
+  color: var(--black-color);
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px;
+  cursor: pointer;
+  }
   input:hover {
     animation: blinker 1s linear infinite;
   }
   select {
-    width: 80%;
+    width: 100%;
     margin: 1%;
     padding: 2%;
     border: 2px solid var(--black-color);
