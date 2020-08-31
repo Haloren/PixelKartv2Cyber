@@ -3,8 +3,8 @@
     <h1> <%= @user.username %>'s Garage </h1>
 
     <% if @user.karts == [] %>
-        <h2> Your Garage is empty! </h2>
-        <%= link_to "Build your first Kart", new_kart_path %>
+        <h2> Your Garage is empty!</h2>
+        <h2><%= link_to "Build your first Kart", new_kart_path %></h2>
     <% end %>
 
 
