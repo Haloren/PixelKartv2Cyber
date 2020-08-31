@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.user_id = session[:user_id]
         if @review.save
-            redirect_to review_path(@review)
+            redirect_to review_path
         else
             flash[:message] = @user.errors.full_messages
             render :new

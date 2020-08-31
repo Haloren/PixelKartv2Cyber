@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get '/help', to: 'users#help'
   
   resources :reviews
-  resources :karts
+  resources :karts do
+    resources :reviews, only: [:new]
+  end
   resources :clubs
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

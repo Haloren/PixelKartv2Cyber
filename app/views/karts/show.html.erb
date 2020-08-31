@@ -7,7 +7,7 @@
     <h3> <%= @kart.club.name %> </h3>
 
     <% if @kart.user.id != @user.id %>
-        <%= link_to "Review this Kart" %>
+        <%= link_to "Review this Kart", "/karts/#{@kart.id}/reviews/new" %>
     <% end %>
 
     <p> <%= @kart.driver %> | <%= @kart.body %> | <%= @kart.wheels %></p>
