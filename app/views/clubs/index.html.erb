@@ -2,6 +2,7 @@
 <h1> All Clubs </h1>
 <br>
 <div class="clubs">
+<h3> Select a Club Name to see Members  </h3>
 <ul>
     <% @clubs.each do |club| %>
         <li><%= link_to club.name, club_path(club.id) %></li>
