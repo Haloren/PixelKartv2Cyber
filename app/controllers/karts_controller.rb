@@ -4,7 +4,7 @@ class KartsController < ApplicationController
     def new
         @kart = Kart.new
         # byebug
-        @kart.build_garage 
+        @kart.build_club 
     end
 
     def create
@@ -17,13 +17,6 @@ class KartsController < ApplicationController
             @kart.errors.full_messages
             render :new
         end
-
-    end
-
-    def show
-        # byebug
-        @kart = Kart.find_by(id: params[:id])
-        @ratings = @kart.reviews
     end
 
     def destroy_kart
@@ -33,9 +26,15 @@ class KartsController < ApplicationController
         redirect_to @user_path
     end
 
+    def show
+        # byebug
+        @kart = Kart.find_by(id: params[:id])
+        @ratings = @kart.reviews
+    end
+
     private 
 
         def kart_params
-            parmas.require(:kart).permit(:name, :driver, :body, :wheels, :garage_id, :garage_attributes [:name])
+            parmas.require(:kart).permit(:name, :driver, :body, :wheels, :club_id, :club_attributes [:name])
         end
 end

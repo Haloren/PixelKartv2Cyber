@@ -14,11 +14,11 @@ class Kart < ApplicationRecord
   BODIES = ['Magnam', 'CyTruck', 'Panda']
   WHEELS = ['White Star', 'Solid', 'Steele']
 
-  accepts_nested_attributes_for :garage
+  accepts_nested_attributes_for :club
 
-  def garage_attributes=(attributes)
-    self.garage = Garage.find_or_create_by(attributes) if !attributes['name'].empty?
-    self.garage
+  def club_attributes=(attributes)
+    self.club = Club.find_or_create_by(attributes) if !attributes['name'].empty?
+    self.club
   end
 
   def average_rating
