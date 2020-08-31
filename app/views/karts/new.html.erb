@@ -14,11 +14,13 @@
     <%= f.collection_select :body, Kart::BODIES, :to_s, :to_s, include_blank: "Kart" %>
     <%= f.collection_select :wheels, Kart::WHEELS, :to_s, :to_s, include_blank: "Wheels" %>
 
+    <%= f.label "Select a Club:" %>
     <%= f.collection_select :club_id, Club.all, :id, :name, include_blank: "Pick a Club" %>
 
-        <%= f.fields_for :club do |g| %>
-            <%= g.text_field :name, placeholder: "Club Name" %>
-        <% end %>
+    <%= f.fields_for :club do |g| %>
+        <%= f.label "Start a New Club" %>
+        <%= g.text_field :name, placeholder: "Club Name" %>
+    <% end %>
 
     <div class="formbutton"><%= f.submit "Build this Kart" %></div>
 <% end %>

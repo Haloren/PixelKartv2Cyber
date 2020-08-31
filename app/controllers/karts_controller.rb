@@ -34,7 +34,7 @@ class KartsController < ApplicationController
 
     private 
 
-        def kart_params
-            parmas.require(:kart).permit(:name, :driver, :body, :wheels, :club_id, :club_attributes [:name])
-        end
+    def kart_params
+        params.require(:kart).permit(:name, :driver, :body, :wheels, :club_id, :club_attributes [:name])
+    end
 end
