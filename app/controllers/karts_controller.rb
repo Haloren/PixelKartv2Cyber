@@ -1,13 +1,23 @@
 class KartsController < ApplicationController
-    before_action :set_user, only: [:new, :index, :show, :destroy_kart]
+    before_action :set_user, only: [:index, :show, :new, :create, :destroy_kart]
 
     def new
+        @kart = Kart.new
+        # byebug
+        @kart.build_garage 
     end
 
     def create
-    end
+        @kart = Kart.new(kart_params)
+        @kart.user_id = session[:user_id]
 
-    def index 
+        if @kart.save
+            redirect_to kart_path(@kart)
+        else
+            @kart.errors.full_messages
+            render :new
+        end
+
     end
 
     def show
