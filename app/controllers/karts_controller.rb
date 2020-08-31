@@ -1,5 +1,5 @@
 class KartsController < ApplicationController
-    before_action :set_user, only: [:index, :show, :new, :create, :destroy_kart]
+    before_action :set_user, only: [:index, :show, :new, :create, :destroy]
 
     def new
         @kart = Kart.new
@@ -19,11 +19,11 @@ class KartsController < ApplicationController
         end
     end
 
-    def destroy_kart
+    def destroy
         @kart = Kart.find_by(id: params[:id])
         @kart.destroy
         flash[:message] = " #{@kart.name} DELETED "
-        redirect_to @user_path
+        redirect_to "/users/#{@user.id}"
     end
 
     def show
@@ -35,6 +35,6 @@ class KartsController < ApplicationController
     private 
 
     def kart_params
-        params.require(:kart).permit(:name, :driver, :body, :wheels, :club_id, :club_attributes [:name])
+        params.require(:kart).permit(:name, :driver, :body, :wheels, :club_id, club_attributes: [:name])
     end
 end

@@ -28,6 +28,10 @@
 </blockquote>
 </div>
 <br>
-<div class="container-start">
-<div class="flashmessage"><%= link_to "DELETE KART", [@kart], :confirm => 'Send you Kart to the Junkyard', :method => :delete %></div>
+
+<% if @kart.user.id == @user.id %>
+    <div class="container-start">
+    <div class="flashmessage"><%= link_to "DELETE KART", kart_path(@kart), confirm: 'Send you Kart to the Junkyard', method: :delete %></div>
+<% end %>
+
 </div>

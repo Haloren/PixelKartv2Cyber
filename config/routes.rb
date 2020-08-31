@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   resources :reviews
   resources :karts do
-    resources :reviews, only: [:new]
+    resources :reviews, only: [:new, :index]
   end
   resources :clubs
   resources :users
