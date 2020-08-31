@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
     end
 
     def new
-
     end
+    
     # LOGIN
     def create
         # byebug
