@@ -1,4 +1,8 @@
 <br><br><br>
+Exploration goals of this project: 
+- Rails server-side web application framework
+- SCSS
+- OminAuth
 
 # Pixel Kart v2 Cyber Edition
 Under Construction: Demo (YouTube Video Link will be here)
