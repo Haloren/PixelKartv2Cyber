@@ -71,6 +71,7 @@ nav {
   background-color: var(--black-color);
   justify-content: center;
   font-family: 'Orbitron', sans-serif;
+  z-index: 999;
   // animation: blinker 6s linear infinite;
   
   ul {
@@ -528,18 +529,21 @@ form {
 }
 // BUILD A KART IMAGE
 .builder {
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 282px;
   position: relative;
-  top: 1%;
-  left: 1%;
+  margin: 0px;
+  padding: 0px;
+  top: -50px;
+  left: 0;
+  bottom: -250px;
 } 
   .component {
-      height: 400px;
-      width: 400px;
+      height: 500px;
+      width: 282px;
       position: absolute;
-      top: 1%;
-      left: 1%;
+      top: 0%;
+      left: 0%;
   }
 // BUILD A KART FORM
 .build {
