@@ -31,7 +31,7 @@ Just head Home, click on the Home link in the top left corner
 # Check out some Karts
 1. Click on "Reviews" or "Home"
 2. Click on the Kart name to see what the kart looks like or scroll down to see reviews for the kart.
-- NOTE: You can ##DELETE your own Kart by clicking the "DELETE KART"
+- NOTE: You can DELETE your own Kart by clicking the "DELETE KART"
 
 # Contributors Guide
 Bug reports and pull requests are welcome on GitHub. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
