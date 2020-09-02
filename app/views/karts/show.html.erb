@@ -10,19 +10,37 @@
         <%= link_to "Review this Kart", "/karts/#{@kart.id}/reviews/new" %>
     <% end %>
 
+<% if false %>
 <%= @kart.driver %> | <%= @kart.body %> | <%= @kart.wheels %>
+<% end %>
 <div class="builder">
     <% if @kart.driver == 'Trooper' %>
         <%= image_tag ("Trooper.png"), class:"component" %>
+    <% elsif @kart.driver == 'Knome' %>
+        <%= image_tag ("Knome.png"), class:"component" %>
+    <% else %>
+        <%= image_tag ("Racer.png"), class:"component" %>
     <% end %>
-    <% if @kart.wheels == 'Solid' %>
+
+    <% if @kart.wheels == 'Steele' %>
+        <%= image_tag ("Steele.png"), class:"component" %>
+    <% elsif @kart.wheels == 'Star' %>
+        <%= image_tag ("Star.png"), class:"component" %>
+    <% else %>
         <%= image_tag ("Solid.png"), class:"component" %>
     <% end %>
+
     <% if @kart.body == 'CyTruck' || @kart.body == 'Cytruck' %>
         <%= image_tag ("Cytruck.png"), class:"component" %>
+    <% elsif @kart.body == 'Magnum' %>
+        <%= "Under Construction" %>
+    <% elsif @kart.body == 'Dover Mobile' %>
+        <%= image_tag ("DoverMobile.png"), class:"component" %>
+    <% else %>
+        <%= image_tag ("Panda.png"), class:"component" %>
     <% end %>
 </div>
-     
+
 </div>
 <div class="reviews">
 <blockquote class="review-content">
