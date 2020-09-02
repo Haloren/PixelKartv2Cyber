@@ -8,7 +8,7 @@ Under Construction: Demo (YouTube Video Link will be here)
 If you dont already have an account sign up or use your Google account to login.
 If you already have an account Login with your email & password.
 
-# Build your first Kart#
+# Build your first Kart
 1. Click the link to "Build a Kart"
 2. Name your Kart
 3. Select from the drop down a Driver, Body, & Wheels
@@ -28,10 +28,10 @@ Just head Home, click on the Home link in the top left corner
 5. Add any comments if you'd like
 6. Click "Create Review"
 
-# Check out some some additional info about a Kart
+# Check out some Karts
 1. Click on "Reviews" or "Home"
 2. Click on the Kart name to see what the kart looks like or scroll down to see reviews for the kart.
-- NOTE: You can DELETE your own Kart by clicking the "DELETE KART"
+- NOTE: You can ##DELETE your own Kart by clicking the "DELETE KART"
 
 # Contributors Guide
 Bug reports and pull requests are welcome on GitHub. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
