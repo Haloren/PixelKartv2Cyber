@@ -526,7 +526,21 @@ form {
     text-transform: uppercase;
     box-shadow:1px 1px 10px var(--white-color), 1px 1px 10px var(--yellow-color);
 }
-
+// BUILD A KART IMAGE
+.builder {
+  height: 400px;
+  width: 400px;
+  position: relative;
+  top: 1%;
+  left: 1%;
+} 
+  .component {
+      height: 400px;
+      width: 400px;
+      position: absolute;
+      top: 1%;
+      left: 1%;
+  }
 // BUILD A KART FORM
 .build {
   display: flex;
@@ -538,7 +552,7 @@ form {
     background-color: var(--white-color);
   }
   input, textarea {
-    width: 100%;
+    width: 90%;
     margin: 1%;
     padding: 3%;
     border: 2px solid var(--black-color);

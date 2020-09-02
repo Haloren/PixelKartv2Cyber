@@ -10,8 +10,19 @@
         <%= link_to "Review this Kart", "/karts/#{@kart.id}/reviews/new" %>
     <% end %>
 
-    <p> <%= @kart.driver %> | <%= @kart.body %> | <%= @kart.wheels %></p>
-
+<%= @kart.driver %> | <%= @kart.body %> | <%= @kart.wheels %>
+<div class="builder">
+    <% if @kart.driver == 'Trooper' %>
+        <%= image_tag ("Trooper.png"), class:"component" %>
+    <% end %>
+    <% if @kart.wheels == 'Solid' %>
+        <%= image_tag ("Solid.png"), class:"component" %>
+    <% end %>
+    <% if @kart.body == 'CyTruck' || @kart.body == 'Cytruck' %>
+        <%= image_tag ("Cytruck.png"), class:"component" %>
+    <% end %>
+</div>
+     
 </div>
 <div class="reviews">
 <blockquote class="review-content">

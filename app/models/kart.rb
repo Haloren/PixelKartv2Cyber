@@ -11,7 +11,7 @@ class Kart < ApplicationRecord
   validates :wheels, presence: true
 
   DRIVERS = ['Knome', 'Trooper', 'Racer']
-  BODIES = ['Magnam', 'CyTruck', 'Panda']
+  BODIES = ['Magnam', 'CyTruck', 'Panda', 'Dover Mobile']
   WHEELS = ['White Star', 'Solid', 'Steele']
 
   accepts_nested_attributes_for :club
